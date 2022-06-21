@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocumentFragment</title>
+</head>
+<body>
+
+    <ul id="myList"></ul>
+    
+</body>
+<script>
+    /**
+     * DocumentFragment
+     * 
+     * nodeType 的值为 11
+     * nodeName 的值为 "#document-fragment"
+     * nodeValue 的值为 null
+     * parentNode 的值为 null
+     * 
+     */
+
+    var fragment = document.createDocumentFragment();
+    var ul = document.getElementById('myList');
+    var li = null;
+
+    for (var i = 0; i < 3; i++) {
+        li = document.createElement('li')
+        li.appendChild(document.createTextNode("Item " + (i + 1)));
+        fragment.appendChild(li);
+    }
+
+    ul.appendChild(fragment);
+</script>
+</html>

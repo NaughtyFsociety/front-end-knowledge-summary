@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text类型</title>
+</head>
+<body>
+    <p>It's a text!</p>
+    
+</body>
+<script>
+    /**
+     * Text 类型
+     * 
+     * nodeType 的值为3；
+     * nodeName 的值为#Text
+     * nodeValue 的值为节点所包含的文本
+     * parentNode 是一个Element
+     * 不支持(没有) 子节点
+     * appendData(text): 将text添加到节点的末尾
+     * deleteData(offset, count): 从offset指定的位置开始删除count个字符。
+     * insertData(offset, text): 在offset指定的位置插入text。
+     * replaceData(offset, count, text): 用text 替换从offset指定的位置开始到offset + count为止处的文本。
+     * splitText(offset): 从offset指定的位置将当前文本节点分成2个文本节点
+     * substringData(offset): 提取从offset指定位置开始到offset + count 为止处的字符串
+     * 
+     */
+    var para = document.querySelector('p')
+
+    console.log(para.firstChild.nodeValue)
+    console.log(para.firstChild.appendData(' cool!'))
+    console.log(para.firstChild.insertData(6, ' simple'))
+
+</script>
+</html>

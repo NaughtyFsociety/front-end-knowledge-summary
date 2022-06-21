@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ul id="list2">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ul id="list3">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ul id="list4">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ul id="list5">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+<script>
+    /**
+     * appendChild(new) //用于向childNodes 列表的末尾添加一个节点。
+     * insertBefore(new,target)  // 用于在childNodes 列表中某个特定的位置添加一个节点。
+     * replaceChild(new, target) // 用于在childNodes 列表中某个特定的位置替换一个节点。
+     * removeChild(target)  // 用于在childNodes 列表中某个特定的位置移除一个指定的节点。
+     * cloneNode() // 用于克隆一个指定的节点,它接受一个Boolean 参数,true 是深克隆，false 是浅克隆。
+     */
+
+
+    var list1 = document.getElementById('list1')
+    var list2 = document.getElementById('list2')
+    var list3 = document.getElementById('list3')
+    var list4 = document.getElementById('list4')
+    var list5 = document.getElementById('list5')
+
+    var newli1 = document.createElement('li')
+    newli1.textContent = "new li1"
+    list1.appendChild(newli1)
+
+    var newli2 = document.createElement('li')
+    newli2.textContent = "new li2"
+    list2.insertBefore(newli2, list2.childNodes[3])
+
+    var replacedli = document.createElement('li')
+    replacedli.textContent = "replaced li"
+
+    list3.replaceChild(replacedli, list3.childNodes[3])
+
+    list4.removeChild(list4.childNodes[3])
+
+    var newlist51 = list5.cloneNode(true)
+    var newlist52 = list5.cloneNode(false)
+    console.log(newlist51)
+    console.log(newlist52)
+    console.log(newlist51.length === newlist52.length)
+
+
+
+</script>
+</html>

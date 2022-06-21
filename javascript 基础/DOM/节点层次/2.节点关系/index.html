@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent">
+        <div id="p-parent">
+            <p>2</p>
+        </div>
+        <ul id="li-parent">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</body>
+<script>
+    /**
+     * childNodes  节点的所有子节点
+     * firstChild  节点的第一个子节点
+     * lastChild  节点的最后一个子节点 
+     * parentNode  节点的父级节点
+     * nextSibling  节点的下一个兄弟节点 
+     * previousSibling  节点的前一个兄弟节点 
+     * hasChildNodes() 判断当前节点是否有子节点
+     */
+
+    let parent = document.getElementById('parent')
+    let pParent = document.getElementById('p-parent')
+    let liParent = document.getElementById('li-parent')
+
+    console.log(parent.parentNode === document.body) // ture
+    console.log(parent.firstChild) // 一个文本节点
+    console.log(parent.lastChild) // 一个文本节点
+    console.log(liParent.firstChild.nextSibling) // <li>1</li>
+    console.log(liParent.lastChild.previousSibling) // <li>5</li>
+    console.log(liParent.hasChildNodes()) // true
+
+
+</script>
+</html>

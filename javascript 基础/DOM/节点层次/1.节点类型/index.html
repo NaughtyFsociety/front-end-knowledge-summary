@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para">hello world</p>
+    <!-- 注释节点 -->
+</body>
+<script>
+    /**
+     * 节点类型
+     */
+
+    // Node.ELEMENT_NODE (1); //元素节点
+    // Node.ATTRIBUTE_NODE (2); // 属性节点 (DOM4 已废弃)
+    // Node.TEXT_NODE(3); //文本节点
+    // Node.CDATA_SECTION_NODE(4); // CDATA_SECTION 节点
+    // Node.ENTITY_REFERENCE_NODE(5); // XML 实体引用节点 (DOM4 已废弃)
+    // Node.ENTITY_NODE(6); // 一个 XML <!ENTITY ...>  节点 (DOM4 已废弃)
+    // Node.PROCESSING_INSTRUCTION_NODE(7); // XML 文档的节点类型
+    // Node.COMMENT_NODE(8); // 注释节点
+    // Node.DOCUMENT_NODE(9); // document 节点
+    // Node.DOCUMENT_TYPE_NODE(10); //DocumentType 节点
+    // Node.DOCUMENT_FRAGMENT_NODE(11); // DocumentFragment 节点
+    // Node.NOTATION_NODE(12); // 一个 XML<!NOTATION ...> 节点 (DOM4 已废弃)
+
+    document.nodeType === Node.DOCUMENT_NODE // true
+    document.doctype.nodeType === Node.DOCUMENT_TYPE_NODE // true
+
+    var fragment = document.createDocumentFragment()
+    fragment.nodeType === Node.DOCUMENT_FRAGMENT_NODE // true
+
+    var para = document.getElementById('para')
+    para.nodeType === Node.ELEMENT_NODE // true
+    para.childNodes[0].nodeType === Node.TEXT_NODE // true
+    document.body.childNodes[3].nodeType === Node.COMMENT_NODE // true
+</script>
+</html>
