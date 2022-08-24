@@ -15,20 +15,48 @@
 
 const MyPromise = require('./myPromise');
 
-function p1 () {
-  return new MyPromise(function (resolve, reject) {
-    setTimeout(function () {
-      resolve('p1')
-    }, 2000)
-  })
-}
-function p2 () {
-  return new MyPromise(function (resolve, reject) {
-    reject('失败')
-    // resolve('成功');  
-  })
-}
+// function p1 () {
+//   return new MyPromise(function (resolve, reject) {
+//     setTimeout(function () {
+//       resolve('p1')
+//     }, 2000)
+//   })
+// }
+// function p2 () {
+//   return new MyPromise(function (resolve, reject) {
+//     reject('失败')
+//     // resolve('成功');  
+//   })
+// }
 
-p2()
-  .then(value => console.log(value))
-  .catch(reason => console.log(reason))
+// p2()
+//   .then(value => console.log(value))
+//   .catch(reason => console.log(reason))
+
+const p1 = new MyPromise((resolve, reject) => {
+    console.log('start')
+    resolve('start')
+})
+
+
+p1.then(() => {
+  console.log(1)
+}).then(() => {
+  console.log(2)
+}).then(() => {
+  console.log(3)
+}).then(() => {
+  console.log(4)
+})
+
+p1.then(() => {
+  console.log(11)
+}).then(() => {
+  console.log(22)
+}).then(() => {
+  console.log(33)
+}).then(() => {
+  console.log(44)
+})
+
+
